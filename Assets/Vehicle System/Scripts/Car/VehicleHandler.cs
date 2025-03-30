@@ -76,12 +76,17 @@ public class VehicleHandler : MonoBehaviour
         //float initialTorque = 50;
         if (Mathf.Abs(input.x) > 0)
         {
-            //rb.AddForce(rb.transform.right * steeringMultiplier * input.x);
-            float turnSpeed = steeringMultiplier * input.x * Time.fixedDeltaTime;
-            transform.Rotate(Vector3.up, turnSpeed);
-
-            //float torqueMultiplier = initialTorque * Time.deltaTime;
-            //rb.AddTorque(transform.right * torqueMultiplier);
+            // Calculate speed-adjusted steering
+        float currentSpeed = rb.linearVelocity.magnitude;
+        float speedFactor = Mathf.Lerp(1f, 0.3f, currentSpeed / 30f); // Adjust 30f to match your max speed
+        float turnAngle = steeringMultiplier * input.x * speedFactor * Time.fixedDeltaTime;
+        
+        // Apply both rotation and velocity redirection
+        Quaternion turnRotation = Quaternion.Euler(0, turnAngle, 0);
+        rb.MoveRotation(rb.rotation * turnRotation);
+        
+        // Align velocity with forward direction
+        rb.linearVelocity = transform.forward * rb.linearVelocity.magnitude;
         }
 
     }
