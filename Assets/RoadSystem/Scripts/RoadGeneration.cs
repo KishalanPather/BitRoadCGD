@@ -21,9 +21,9 @@ public class RoadGeneration : MonoBehaviour
     WaitForSeconds waitTime = new WaitForSeconds(0.1f);
 
     const float sectionLength = 25;
-    float obsSpawnRate = 3.5f; // Initial spawn rate
-    float spawnRateDecrease = 0.1f; // Rate decrease over time
-    float minSpawnRate = 1f; // Minimum spawn interval
+    float obsSpawnRate = 3f;
+    float spawnRateDecrease = 0.1f;
+    float minSpawnRate = 1f;
     float lastSpawnTime;
 
 
@@ -126,7 +126,7 @@ public class RoadGeneration : MonoBehaviour
     {
         if (Time.time - lastSpawnTime >= obsSpawnRate)
         {
-            int obstacleCount = Random.Range(1, 4); // Spawn 1 to 3 obstacles per section
+            int obstacleCount = Random.Range(1, 5);
             for (int i = 0; i < obstacleCount; i++)
             {
                 GameObject obstacle = Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)]);
@@ -142,7 +142,7 @@ public class RoadGeneration : MonoBehaviour
     {
         while (obsSpawnRate > minSpawnRate)
         {
-            yield return new WaitForSeconds(10f); // Every 10 seconds, decrease spawn rate
+            yield return new WaitForSeconds(10f);
             obsSpawnRate = Mathf.Max(minSpawnRate, obsSpawnRate - spawnRateDecrease);
         }
     }
