@@ -1879,7 +1879,8 @@ MonoBehaviour:
   fuelText: {fileID: 1193160110}
   fuelSlider: {fileID: 243377748}
   fuelFillImage: {fileID: 1060882351}
-  boostInfoText: {fileID: 704816175}
+  multiplierText: {fileID: 704816175}
+  multiplierDescriptionText: {fileID: 0}
   distanceMultiplier: 1
   coinMultiplier: 1
   fuelEfficiencyMultiplier: 100

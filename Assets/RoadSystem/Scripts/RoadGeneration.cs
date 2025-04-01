@@ -13,8 +13,8 @@ public class RoadGeneration : MonoBehaviour
     GameObject[] obstaclePrefabs;
 
     [SerializeField] GameObject fuelPackPrefab;
-    [SerializeField] float initialFuelPackSpawnChance = 0.3f;
-    [SerializeField] float minFuelPackSpawnChance = 0.1f;
+    [SerializeField] float initialFuelPackSpawnChance = 0.5f;
+    [SerializeField] float minFuelPackSpawnChance = 0.25f;
     [SerializeField] float maxFuelPackAmount = 35f;
     [SerializeField] float minFuelPackAmount = 17.5f;
     [SerializeField] float progressDistanceForScaling = 10000f;
