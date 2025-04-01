@@ -858,7 +858,7 @@ MonoBehaviour:
   accelerationMultiplier: 1.5
   brakeMultiplier: 2
   steeringMultiplier: 50
-  baseSpeed: 1
+  baseSpeed: 6
 --- !u!54 &1566744314
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -867,9 +867,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566744310}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1500
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
