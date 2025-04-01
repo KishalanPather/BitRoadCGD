@@ -780,15 +780,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingSectionPrefab: {fileID: 4228901943414644090, guid: be9941c93eb363c4ebc0e9630f08e58c, type: 3}
   sectionPrefabs:
-  - {fileID: 4228901943414644090, guid: be9941c93eb363c4ebc0e9630f08e58c, type: 3}
+  - {fileID: 4228901943414644090, guid: f5f1b626190b24b8495375c0f237f0d2, type: 3}
   - {fileID: 8342445536736783306, guid: 3e862552e21c149319e130199f730b4a, type: 3}
   - {fileID: 7894569189696948405, guid: 5e9807974aa1f4472a90115fad933af4, type: 3}
+  - {fileID: 9148073374690538204, guid: fb8999069f89dc44a9c0178951f6e87d, type: 3}
   obstaclePrefabs:
-  - {fileID: 9148314940561136784, guid: 308804ff163315b459ab2aac4d97010e, type: 3}
-  - {fileID: 7325862393865720215, guid: 927cfb85d2304584986b0e302512eb31, type: 3}
-  - {fileID: 5004906652188656253, guid: 4040c3c51fa8a3244b561996625a9acd, type: 3}
-  - {fileID: 8313026310651421362, guid: cb9db0c6e40f5754fa548b8e29685758, type: 3}
-  - {fileID: 8129628725204315337, guid: 45a5ea088d1b5e04095cc8124a576ae6, type: 3}
+  - {fileID: 2437159172812452278, guid: 99b5f22468d013842917df1b76aef0e3, type: 3}
+  - {fileID: 7325862393865720215, guid: 680d47f405868472291676be6e74526d, type: 3}
+  - {fileID: 5004906652188656253, guid: eacec9e8511564a839ca490ae4ec527a, type: 3}
+  - {fileID: 8313026310651421362, guid: a76bffca3c0164ea69a67797349d0ef9, type: 3}
+  - {fileID: 5730550796871899098, guid: 1b168bf11438ca84e862c76c212827e3, type: 3}
   fuelPackPrefab: {fileID: 126135609452321310, guid: d759c3edd49c74de5b4ded06d7e2e03c, type: 3}
   initialFuelPackSpawnChance: 0.3
   minFuelPackSpawnChance: 0.1
