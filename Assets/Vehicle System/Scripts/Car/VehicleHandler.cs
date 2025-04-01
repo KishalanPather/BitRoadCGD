@@ -6,10 +6,14 @@ public class VehicleHandler : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
 
-    float accelerationMultiplier = 3f;
+
+    //handling stuff
+    float accelerationMultiplier = 1.5f;
     float brakeMultiplier = 2f;
-    float steeringMultiplier = 10f;
+    float steeringMultiplier = 50f;
     float maxSpeed = 150f;
+
+    //Power up stuff
     float maxFuel = 100f;
     float currentFuel;
     bool isBoosted = false;
