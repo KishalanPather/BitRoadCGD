@@ -53,6 +53,7 @@ public class RoadGeneration : MonoBehaviour
             if (prefabIndex > sectionPrefabs.Length - 1)
             {
                 prefabIndex = 0;
+                
             }
         }
 
