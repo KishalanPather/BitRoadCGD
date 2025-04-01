@@ -9,7 +9,7 @@ A low-poly endless runner-style driving game built in Unity 6. Players drive a c
 - **Obstacle Generation**: Obstacles are generated randomly per section with no generation first to increasing generation over time.
 - **Fuel System**: Players must collect fuel packs to keep driving.
 - **Score System**: Earn points based on distance traveled.
-- **Game Over Mechanic**: Running out of fuel or collision with obstacles triggers a game-over screen. (NOTE: Collisions are not properly with obstacles and environment)
+- **Game Over Mechanic**: Running out of fuel or collision with obstacles triggers a game-over screen. (NOTE: Collisions are not working properly with obstacles and environment)
 
 ## Controls
 - **Arrow Keys / WASD**: Steer the car.
@@ -19,3 +19,7 @@ A low-poly endless runner-style driving game built in Unity 6. Players drive a c
 2. Open the project in Unity.
 3. Run in the Unity Editor
 4. Select Start Game or Tutorial to play the game
+
+## Asset packs
+1. KayKit: https://kaylousberg.itch.io/city-builder-bits
+2. Kenney: https://kenney.nl/assets/city-kit-roads
