@@ -13,7 +13,8 @@ public static ScoreManager Instance;
     public Text fuelText;
     public Slider fuelSlider;
     public Image fuelFillImage;
-    public Text boostInfoText;
+    public Text multiplierText;
+    public Text multiplierDescriptionText;
 
     [Header("Score Multipliers")]
     [SerializeField] private float distanceMultiplier = 1f;
@@ -137,19 +138,20 @@ public static ScoreManager Instance;
             speedText.text = Mathf.FloorToInt(vehicleHandler.GetCurrentSpeed()).ToString() + " KMH";
         }
 
-        if (boostInfoText != null && vehicleHandler != null)
+        if (multiplierText != null && vehicleHandler != null)
         {
             float multiplier = vehicleHandler.GetScoreMultiplier();
             if (multiplier > 1f)
             {
-                boostInfoText.text = multiplier.ToString() + "x";
+                multiplierText.text = multiplier.ToString() + "x";
             }
             else
             {
-                boostInfoText.text = "";
+                multiplierText.text = "";
             }
         }
     }
+    
 
     /// <summary>
     /// Call this method when a coin is collected.

@@ -153,7 +153,7 @@ MonoBehaviour:
   spinSpeed: 1440
   destroyDelay: 0.5
   riseHeight: 1.25
-  collectSound: {fileID: 8300000, guid: e5f72aa9a7cb27b4c98791a25a92e7a5, type: 3}
+  collectSound: {fileID: 8300000, guid: e6b430653926b204f96bfefe75ff43af, type: 3}
 --- !u!114 &8393857872588478205
 MonoBehaviour:
   m_ObjectHideFlags: 0

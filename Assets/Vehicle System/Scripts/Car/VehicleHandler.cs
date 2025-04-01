@@ -143,6 +143,8 @@ public class VehicleHandler : MonoBehaviour
     /// </summary>
     float ConsumeFuel(float speed, float acceleration)
     {
+        if(isBoosted) return 0f;
+        
         float fuelUsed = baseFuelConsumption + (speed * speedFuelFactor) + (Mathf.Max(0,acceleration) * accelerationFuelFactor);
 
         // If the vehicle is stationary, apply idle fuel consumption

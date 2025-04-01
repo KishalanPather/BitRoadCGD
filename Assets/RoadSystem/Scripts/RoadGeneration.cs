@@ -16,7 +16,7 @@ public class RoadGeneration : MonoBehaviour
     [SerializeField] float initialFuelPackSpawnChance = 0.3f;
     [SerializeField] float minFuelPackSpawnChance = 0.1f;
     [SerializeField] float maxFuelPackAmount = 35f;
-    [SerializeField] float minFuelPackAmount = 15f;
+    [SerializeField] float minFuelPackAmount = 17.5f;
     [SerializeField] float progressDistanceForScaling = 10000f;
 
     [SerializeField] GameObject speedBoostPrefab;
@@ -162,7 +162,7 @@ public class RoadGeneration : MonoBehaviour
         {
             GameObject fuelPack = Instantiate(fuelPackPrefab);
 
-            float upperBound = Mathf.Lerp(maxFuelPackAmount, minFuelPackAmount, progressFactor);
+            float upperBound = Mathf.Lerp(maxFuelPackAmount, minFuelPackAmount, progressFactor * 0.8f);
             float fuelAmount = Random.Range(minFuelPackAmount, upperBound);
 
             FuelPack fp = fuelPack.GetComponent<FuelPack>();
@@ -171,7 +171,7 @@ public class RoadGeneration : MonoBehaviour
                 fp.fuelAmount = fuelAmount;
             }
 
-            float offsetX = Random.Range(-0.175f, 0.175f);
+            float offsetX = Random.Range(-0.25f, 0.25f);
             float offsetZ = Random.Range(-sectionLength / 2.5f, sectionLength / 2.5f);
             fuelPack.transform.position = section.transform.position + new Vector3(offsetX, 0f, offsetZ);
             
@@ -184,7 +184,7 @@ public class RoadGeneration : MonoBehaviour
         if (Random.value <= speedBoostSpawnChance)
         {
             GameObject speedBoost = Instantiate(speedBoostPrefab);
-            float offsetX = Random.Range(-0.175f, 0.175f);
+            float offsetX = Random.Range(-0.25f, 0.25f);
             float offsetZ = Random.Range(-sectionLength / 2.5f, sectionLength / 2.5f);
             speedBoost.transform.position = section.transform.position + new Vector3(offsetX, 0.25f, offsetZ);
             
@@ -197,7 +197,7 @@ public class RoadGeneration : MonoBehaviour
     {
         while (obsSpawnRate > minSpawnRate)
         {
-            yield return new WaitForSeconds(10f); // Every 10 seconds, decrease spawn rate
+            yield return new WaitForSeconds(10f);
             obsSpawnRate = Mathf.Max(minSpawnRate, obsSpawnRate - spawnRateDecrease);
         }
     }
