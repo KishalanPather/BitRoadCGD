@@ -21,7 +21,7 @@ public class RoadGeneration : MonoBehaviour
     WaitForSeconds waitTime = new WaitForSeconds(0.1f);
 
     const float sectionLength = 25;
-    float obsSpawnRate = 3f;
+    float obsSpawnRate = 2.5f;
     float spawnRateDecrease = 0.1f;
     float minSpawnRate = 1f;
     float lastSpawnTime;
