@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 3a0d8bf945f289447963fb8179d0e453
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - startingSectionPrefab: {instanceID: 0}
+  - fuelPackPrefab: {fileID: 126135609452321310, guid: d759c3edd49c74de5b4ded06d7e2e03c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
