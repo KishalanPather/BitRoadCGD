@@ -12,6 +12,15 @@ public class RoadGeneration : MonoBehaviour
     [SerializeField]
     GameObject[] obstaclePrefabs;
 
+    [SerializeField] GameObject fuelPackPrefab;
+    [SerializeField] float initialFuelPackSpawnChance = 0.3f;
+    [SerializeField] float minFuelPackSpawnChance = 0.1f;
+    [SerializeField] float maxFuelPackAmount = 35f;
+    [SerializeField] float minFuelPackAmount = 15f;
+    [SerializeField] float progressDistanceForScaling = 10000f;
+
+    [SerializeField] GameObject speedBoostPrefab;
+    [SerializeField] float speedBoostSpawnChance = 0.1f;
     GameObject[] sectionsPool = new GameObject[15];
 
     GameObject[] sections = new GameObject[8];
@@ -91,7 +100,12 @@ public class RoadGeneration : MonoBehaviour
                 sections[i].transform.position = new Vector3(lastSectorPosition.x, 0, lastSectorPosition.z + sectionLength * sections.Length);
                 sections[i].SetActive(true);
 
-                SpawnObstacles(sections[i]);
+                //SpawnObstacles(sections[i]);
+                if (sections[i].transform.position.z > 75f)
+                {
+                    SpawnFuelPack(sections[i]);
+                    SpawnSpeedBoost(sections[i]);
+                }
             }
         }
     }
@@ -137,6 +151,47 @@ public class RoadGeneration : MonoBehaviour
             lastSpawnTime = Time.time;
         }
     }
+
+    void SpawnFuelPack(GameObject section)
+    {
+        float progressFactor = Mathf.Clamp01(vehicleTransform.position.z / progressDistanceForScaling);
+
+        float currentSpawnChance = Mathf.Lerp(initialFuelPackSpawnChance, minFuelPackSpawnChance, progressFactor);
+
+        if (Random.value <= currentSpawnChance)
+        {
+            GameObject fuelPack = Instantiate(fuelPackPrefab);
+
+            float upperBound = Mathf.Lerp(maxFuelPackAmount, minFuelPackAmount, progressFactor);
+            float fuelAmount = Random.Range(minFuelPackAmount, upperBound);
+
+            FuelPack fp = fuelPack.GetComponent<FuelPack>();
+            if (fp != null)
+            {
+                fp.fuelAmount = fuelAmount;
+            }
+
+            float offsetX = Random.Range(-0.175f, 0.175f);
+            float offsetZ = Random.Range(-sectionLength / 2.5f, sectionLength / 2.5f);
+            fuelPack.transform.position = section.transform.position + new Vector3(offsetX, 0f, offsetZ);
+            
+            Debug.Log("Fuel Pack spawned with " + fuelAmount + " fuel and chance: " + currentSpawnChance + "Current Progress: " + progressFactor);
+        }
+    }
+
+        void SpawnSpeedBoost(GameObject section)
+    {
+        if (Random.value <= speedBoostSpawnChance)
+        {
+            GameObject speedBoost = Instantiate(speedBoostPrefab);
+            float offsetX = Random.Range(-0.175f, 0.175f);
+            float offsetZ = Random.Range(-sectionLength / 2.5f, sectionLength / 2.5f);
+            speedBoost.transform.position = section.transform.position + new Vector3(offsetX, 0.25f, offsetZ);
+            
+            Debug.Log("Speed Boost Spawned!");
+        }
+    }
+
 
     IEnumerator IncreaseSpawnRate()
     {
