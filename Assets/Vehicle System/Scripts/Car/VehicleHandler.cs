@@ -8,10 +8,10 @@ public class VehicleHandler : MonoBehaviour
     [SerializeField]
     Rigidbody rb;
 
-    public float accelerationMultiplier = 1.5f;
+    public float accelerationMultiplier = 15f;
     public float brakeMultiplier = 2f;
     public float steeringMultiplier = 50f;
-    public float baseSpeed = 1f;
+    public float baseSpeed = 6f;
     Vector2 input = Vector2.zero;
 
     void Start()
