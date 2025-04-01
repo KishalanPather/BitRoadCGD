@@ -90,7 +90,7 @@ public class VehicleHandler : MonoBehaviour
 
         // Check for efficient driving (fuel consumption low)
       
-        if (usedFuel < efficientFuelThreshold && GetCurrentSpeed() >= 75 && transform.position.z > 100f)
+        if (usedFuel < efficientFuelThreshold && GetCurrentSpeed() >= 65 && transform.position.z > 100f)
         {
             efficientStreakTimer += Time.fixedDeltaTime;
             Debug.Log("Efficient Driving");
@@ -148,7 +148,7 @@ public class VehicleHandler : MonoBehaviour
     float ConsumeFuel(float speed, float acceleration)
     {
         if(isBoosted) return 0f;
-        
+
         float fuelUsed = baseFuelConsumption + (speed * speedFuelFactor) + (Mathf.Max(0,acceleration) * accelerationFuelFactor);
 
         // If the vehicle is stationary, apply idle fuel consumption
